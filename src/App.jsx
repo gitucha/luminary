@@ -1,26 +1,24 @@
-import { Route, Router, Routes } from "react-router-dom"
-import Login from "./components/Login"
-import Signup from "./components/Signup"
-import Home from "./components/Home"
-import Questioncard from "./Questioncard"
-
+import React from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Login from './components/Login'
+import Signup from './components/Signup'
+import Questioncard from './components/Questioncard'
+import Home from './components/Home'
+import { useAuth } from './context/index'
 
 function App() {
+  const { userLoggedIn, loading } = useAuth()
 
+  if (loading) return null
 
   return (
-    <>
-    {/* <Router /> 
-
-      <Routes />
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-      <Routes />
-
-    <Router /> */}
-    <Questioncard />
-    </>
+    <Routes>
+      <Route path="/" element={userLoggedIn ? <Navigate to="/home" replace /> : <Navigate to="/login" replace />} />
+      <Route path="/login" element={userLoggedIn ? <Navigate to="/home" replace /> : <Login />}  />
+      <Route path="/signup" element={userLoggedIn ? <Navigate to="/home" replace /> : <Signup />} />
+      <Route path="/home" element={userLoggedIn ? <Home /> : <Navigate to="/login" replace />} />
+      <Route path="/question" element={userLoggedIn ? <Questioncard /> : <Navigate to="/login" replace />} />
+    </Routes>
   )
 }
 

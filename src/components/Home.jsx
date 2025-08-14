@@ -1,28 +1,27 @@
 import React from 'react'
+import { doSignOut } from '../firebase/auth'
+import Questioncard from './Questioncard'
 
 function Home() {
-
-    // async function fetchquestions() {
-    //     try{
-
-    //     const response = await fetch("https://opentdb.com/api.php?amount=10&type=multiple")
-    //     const data = await response.json()
-    //     console.log(data)
-
-    //     } catch(error){
-    //         console.log( "Could not fetch resource" ,error  )
-    //     }
-    //     return 
-        
-    // }
-    // fetchquestions()
+  const handleLogout = async () => {
+    try {
+      await doSignOut()
+    } catch (error) {
+      console.error('Logout error:', error)
+    }
+  }
 
   return (
-    <div>
-      <p>pppp</p>
-    
+    <div className="min-h-screen bg-purple-950 flex flex-col items-center justify-center text-white">
+      <h1 className="text-3xl mb-4">Welcome to the Home Page</h1>
+      <button
+        onClick={handleLogout}
+        className="px-6 py-3 rounded-full bg-purple-700 hover:bg-purple-600"
+      >
+        Logout
+      </button>
+      {/* <Questioncard /> */}
     </div>
-    
   )
 }
 

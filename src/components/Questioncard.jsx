@@ -7,7 +7,6 @@ function Questioncard() {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-900 to-blue-900">
       <div className="bg-[#0f1a30] rounded-3xl p-6 w-[320px] relative">
         
-        {/* Top Bar */}
         <div className="flex justify-between text-sm text-black">
           <span className="bg-purple-600 px-3 py-1 rounded-full">*1 of 10</span>
           <span className="bg-purple-600 px-3 py-1 rounded-full">*difficulty</span>
