@@ -4,6 +4,7 @@ import { doCreateUserWithEmailAndPassword, doSignInWithGoogle } from '../firebas
 import { useAuth } from '../context'
 
 function Signup() {
+
   const { userLoggedIn } = useAuth()
   // const navigate = useNavigate()
 

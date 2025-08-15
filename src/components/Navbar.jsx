@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 function Navbar() {
   return (
     <div>
-        <div className='bg-purple-950 rounded-b-lg p-4 px-3 '>
+        <div className='bg-purple-800 rounded-lg p-4 px-3 flex gap-4 sticky'>
         <Link to='/home'> Home</Link>
         <Link to='/category'> categories</Link>
         <Link to='/profile'> profile</Link>

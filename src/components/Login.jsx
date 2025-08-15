@@ -5,7 +5,7 @@ import { Link, Navigate } from 'react-router-dom'
 
 function Login() {
 
-  const {userLoggedIn} = useAuth()
+  const { userLoggedIn } = useAuth()
   const [isSigningIn, setIsSigningIn] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -15,13 +15,13 @@ function Login() {
     e.preventDefault()
     if (!isSigningIn) {
       setIsSigningIn(true)
-      try{
+      try {
         await doSignInWithEmailAndPassword(email, password)
-      } catch(error){
+      } catch (error) {
         console.error(error)
         setIsSigningIn(false)
       }
-      
+
     }
 
   }
@@ -30,18 +30,18 @@ function Login() {
     e.preventDefault()
     if (!isSigningIn) {
       setIsSigningIn(true)
-      try{
+      try {
         doSignInWithGoogle().catch()
-      } catch(error){
+      } catch (error) {
         console.error(error)
         setIsSigningIn(false)
       }
-      
+
     }
 
   }
-  
-  if(userLoggedIn){
+
+  if (userLoggedIn) {
     return <Navigate to='/home' replace />
   }
 
@@ -68,7 +68,7 @@ function Login() {
 
             <div>
               <input
-                type="text"
+                type="password"
                 className="w-full px-8 py-4 rounded-full bg-purple-700 text-white placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-sm transition-shadow duration-300"
                 placeholder="Password"
                 value={password}
@@ -80,9 +80,32 @@ function Login() {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-purple-700 text-white font-semibold hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md"
-                disabled={isSigningIn}>
-                {isSigningIn ? 'Signing in...' : 'Login'}
+                className="w-full py-4 rounded-full bg-purple-700 text-white font-semibold hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md flex items-center justify-center gap-2"
+                disabled={isSigningIn}
+              >
+                {isSigningIn && (
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                    ></path>
+                  </svg>
+                )}
+                {isSigningIn ? "loging in..." : "Login"}
               </button>
 
             </div>
@@ -95,7 +118,7 @@ function Login() {
           </div>
 
           <div className="flex gap-4">
-            
+
             <button
 
               className="w-full p-4 rounded-full bg-purple-700 text-white font-semibold hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md"
