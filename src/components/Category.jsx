@@ -17,7 +17,7 @@ const categories = [
 
 function Category() {
     return (
-        <div className=" min-h-screen bg-purple-950 flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-br from-purple-900 to-blue-900 flex items-center justify-center p-4">
             <div className="bg-purple-800 rounded-2xl shadow-xl p-8 w-full max-w-md">
                 <h2 className="text-3xl text-white font-bold mb-6 text-center" >Choose a category</h2>
                 <div className="grid grid-cols-1 " >
