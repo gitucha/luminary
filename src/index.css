@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* @font-face {
+  font-family: 'TNT Sports Sans';
+  src: url('/fonts/TNT-Sports-Sans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
