@@ -7,6 +7,7 @@ import Home from './components/Home'
 import { useAuth } from './context/index'
 import Navbar from './components/Navbar'
 import Category from './components/Category'
+import Profile from './components/Profile'
 
 function App() {
   const { userLoggedIn} = useAuth()
@@ -22,9 +23,9 @@ function App() {
         <Route path="/login" element={userLoggedIn ? <Navigate to="/home" replace /> : <Login />} />
         <Route path="/signup" element={userLoggedIn ? <Navigate to="/home" replace /> : <Signup />} />
         <Route path="/home" element={userLoggedIn ? <Home /> : <Navigate to="/login" replace />} />
-        <Route path="/question" element={userLoggedIn ? <Questioncard /> : <Navigate to="/login" replace />} />
+        <Route path="/questioncard" element={userLoggedIn ? <Questioncard /> : <Navigate to="/login" replace />} />
         <Route path="/category" element={userLoggedIn ? <Category /> : <Navigate to="/login" replace />} />
-        <Route path="/category" element={userLoggedIn ? <Category /> : <Navigate to="/login" replace />} />
+        <Route path="/profile" element={userLoggedIn ? <Profile /> : <Navigate to="/login" replace />} />
       </Routes>
      </>
   )

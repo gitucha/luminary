@@ -1,4 +1,5 @@
 import React from 'react'
+import Timer from './Timer'
 
 function Questioncard() {
     return (
@@ -12,9 +13,9 @@ function Questioncard() {
           <span className="bg-purple-600 px-3 py-1 rounded-full">*difficulty</span>
         </div>
 
-        {/* Timer */}
+        
         <div className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-purple-900 text-white rounded-full w-14 h-14 flex items-center justify-center text-lg font-bold shadow-lg">
-          *20
+          <Timer />
         </div>
 
         {/* Question Box */}

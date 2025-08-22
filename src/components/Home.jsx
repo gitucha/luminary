@@ -32,7 +32,7 @@ function Home() {
 
       
       <Link
-        to="/categor"
+        to="/category"
         className="bg-purple-700 px-6 py-3 rounded-full hover:bg-purple-600 transition"
       >
         Get Started
