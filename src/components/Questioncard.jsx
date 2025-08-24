@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Timer from "./Timer";
 
+
 function Questioncard() {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -31,7 +32,7 @@ function Questioncard() {
 
     fetchQuestions();
 
-  }, [category, difficulty]);
+   }, [category, difficulty]);
 
 
 
@@ -42,10 +43,7 @@ function Questioncard() {
 
     const currentQuestion = questions[currentIndex];
     const correctAnswer = currentQuestion.correct_answer;
-    const options = [
-      ...currentQuestion.incorrect_answers,
-      correctAnswer,
-    ].sort(() => Math.random() - 0.5);
+    const options = [...currentQuestion.incorrect_answers,correctAnswer,].sort(() => Math.random() - 0.5);
 
 
    const handleOptionClick = (option) => {
@@ -90,7 +88,7 @@ function Questioncard() {
 
         {/* Options */}
         <div className="mt-6 space-y-4">
-          
+
           {options.map((option, i) => {
             let buttonClass = "w-full py-3 rounded-full transition ";
             if (isAnswered) {
