@@ -29,7 +29,7 @@ function Navbar() {
     //  }
 
   return (
-    <nav className=' fixed left-1/2 -translate-1/2 bottom-3 rounded-full gap-4 shadow-lg bg-gradient-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-lg border border-purple-200/40 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] hover:scale-105 '>
+    <nav className=' fixed left-1/2 -translate-1/2 bottom-3 z-50 rounded-full gap-4 shadow-lg bg-gradient-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-lg border border-purple-200/40 transition-all duration-300 hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] hover:scale-105 '>
         <div className=' flex space-x-4 gap-6 justify-around items-center p-3'>
         <Link className='hover: text-purple-400 transition' to='/home'><BiSolidHome className='ml-2'size={20} /> Home</Link>
         <Link className='hover: text-purple-400 transition' to='/category'><BiSolidCategory size={20} className='ml-6' /> Categories</Link>
